@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Waleed Raza — Research Portfolio</title>
+  <meta name="description" content="Research portfolio of Waleed Raza — Advanced Air Mobility (AAM) / Urban Air Mobility (UAM), noise-optimized routing, vertiport design, and detect-and-avoid (DAA)." />
+  <meta name="author" content="Waleed Raza" />
+  <meta property="og:title" content="Waleed Raza — Research Portfolio" />
+  <meta property="og:description" content="AAM/UAM research: noise prediction & mitigation, routing networks, vertiport ops, and DAA." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#1f78b4" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --primary:#1f78b4; /* blue */
+      --success:#33a02c; /* green */
+      --accent:#e31a1c; /* red */
+      --orange:#ff7f00;
+      --purple:#6a3d9a;
+      --bg:#0b1220;
+      --card:#121a2a;
+      --muted:#9fb3c8;
+      --text:#e6eef7;
+      --soft:#a6cee3;
+      --soft2:#b2df8a;
+      --soft3:#fb9a99;
+      --soft4:#fdbf6f;
+      --soft5:#cab2d6;
+      --soft6:#ffff99;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+    a{color:var(--soft);text-decoration:none}
+    a:hover{color:#fff;text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{
+      position:sticky;top:0;z-index:50;background:linear-gradient(180deg, rgba(11,18,32,.9), rgba(11,18,32,.6));backdrop-filter: blur(8px);
+      border-bottom:1px solid rgba(255,255,255,.06)
+    }
+    nav{display:flex;align-items:center;gap:18px;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px}
+    .brand .dot{width:12px;height:12px;border-radius:999px;background:var(--primary);box-shadow:0 0 0 4px rgba(31,120,180,.25)}
+    .navlinks a{margin:0 10px;font-weight:600;color:var(--muted)}
+    .navlinks a.active,.navlinks a:hover{color:#fff}
+    .btn{display:inline-block;padding:10px 14px;border-radius:999px;background:var(--primary);color:#fff;font-weight:700;border:1px solid rgba(255,255,255,.1);box-shadow:var(--shadow)}
+    .btn.secondary{background:transparent;border-color:rgba(255,255,255,.2);color:#fff}
+    .btn:hover{filter:brightness(1.1)}
+    .hero{padding:64px 0 24px;border-bottom:1px solid rgba(255,255,255,.06);background:
+      radial-gradient(800px 300px at 20% -20%, rgba(31,120,180,.35), transparent 60%),
+      radial-gradient(700px 250px at 80% -10%, rgba(106,61,154,.25), transparent 55%)}
+    .hero .top{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(31,120,180,.12);color:#cfe7fb;border:1px solid rgba(31,120,180,.35);padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px}
+    h1{font-size:40px;line-height:1.1;margin:14px 0 10px}
+    .lead{font-size:18px;color:var(--muted)}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .grid{display:grid;gap:18px}
+    .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .section{padding:44px 0}
+    .section h2{font-size:26px;margin:0 0 14px}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-size:12px;color:var(--muted);font-weight:700}
+    .kpi{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}
+    .kpi .pill{border-color:rgba(31,120,180,.35);background:rgba(31,120,180,.10);color:#cfe7fb}
+    .card-inner{padding:18px}
+    .tag{display:inline-block;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:700;color:#0b1220}
+    .tag.blue{background:var(--soft)}
+    .tag.green{background:var(--soft2)}
+    .tag.red{background:var(--soft3)}
+    .tag.orange{background:var(--soft4)}
+    .tag.purple{background:var(--soft5)}
+    .tag.yellow{background:var(--soft6)}
+    .pub-item{padding:14px;border-bottom:1px dashed rgba(255,255,255,.09)}
+    .pub-item:last-child{border-bottom:none}
+    .pub-meta{font-size:13px;color:var(--muted)}
+    .news-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px dashed rgba(255,255,255,.08)}
+    .news-date{font-weight:800;color:var(--soft4);min-width:110px}
+    .footer{padding:30px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.06)}
+    .social a{margin-right:14px}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-size:12px}
+    .chip .dot{width:8px;height:8px;border-radius:99px}
+    .chip .dot.b{background:var(--soft)}
+    .chip .dot.g{background:var(--soft2)}
+    .chip .dot.r{background:var(--soft3)}
+    .chip .dot.o{background:var(--soft4)}
+    .chip .dot.p{background:var(--soft5)}
+    .chip .dot.y{background:var(--soft6)}
+    .twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    @media (max-width: 900px){
+      .hero .top{grid-template-columns:1fr}
+      .grid.cols-3{grid-template-columns:1fr}
+      .grid.cols-2{grid-template-columns:1fr}
+      .twocol{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand"><span class="dot"></span> <span>Waleed Raza</span></div>
+        <div class="navlinks">
+          <a class="active" href="#home">Home</a>
+          <a href="#research">Research</a>
+          <a href="#publications">Publications</a>
+          <a href="#projects">Projects</a>
+          <a href="#datasets">Datasets</a>
+          <a href="#talks">Talks</a>
+          <a href="#cv">CV</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a class="btn" href="#contact">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" class="hero">
+    <div class="container">
+      <div class="top">
+        <div>
+          <span class="badge">Advanced Air Mobility • Urban Air Mobility</span>
+          <h1>Researching noise‑optimized routing, vertiport design & DAA for eVTOL/UAS</h1>
+          <p class="lead">PhD Candidate, Electrical Engineering & Computer Science, Embry‑Riddle Aeronautical University. I build models and tools for <strong>noise prediction/mitigation (SEL, DNL)</strong>, <strong>dynamic airspace allocation</strong>, and <strong>vision‑based detect‑and‑avoid</strong> (YOLOv9/v11) to enable scalable AAM operations.</p>
+          <div class="kpi">
+            <span class="pill">AAM / UAM</span>
+            <span class="pill">Noise & Acoustics</span>
+            <span class="pill">Routing Optimization</span>
+            <span class="pill">Vertiport Ops</span>
+            <span class="pill">DAA (Computer Vision)</span>
+          </div>
+          <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn" href="#publications">See publications</a>
+            <a class="btn secondary" href="#projects">Explore projects</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-inner">
+            <h3 style="margin:0 0 10px">Research Snapshot</h3>
+            <div class="grid cols-2">
+              <div>
+                <div class="chip"><span class="dot b"></span> Survey on UAM noise tools (AEDT, AIRNOISEUAM, Helios, PSU‑WOPWOP)</div>
+                <div class="chip"><span class="dot g"></span> Dynamic airspace corridor allocation with safety & equity</div>
+                <div class="chip"><span class="dot r"></span> School/hospital avoidance in route planning</div>
+              </div>
+              <div>
+                <div class="chip"><span class="dot o"></span> YOLOv9/YOLOv11 on AVOIDDS for intruder detection</div>
+                <div class="chip"><span class="dot p"></span> Vertiport siting & hub‑and‑spoke accessibility</div>
+                <div class="chip"><span class="dot y"></span> Public acceptance & community noise metrics</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section id="research" class="section">
+    <div class="container">
+      <h2>Research Areas</h2>
+      <div class="grid cols-3">
+        <div class="card"><div class="card-inner">
+          <div class="tag blue">Noise & Acoustics</div>
+          <h3>Prediction & Mitigation</h3>
+          <p>Bridging aeroacoustic models and community metrics (SEL, DNL, EPNL). Tools include FAA AEDT, NASA AIRNOISEUAM, Helios, PSU‑WOPWOP, and custom pipelines.</p>
+        </div></div>
+        <div class="card"><div class="card-inner">
+          <div class="tag green">Routing</div>
+          <h3>Dynamic Airspace Allocation</h3>
+          <p>Multi‑objective optimization of AAM corridors with constraints for safety, equity, and noise exposure. A* / K‑shortest path diversity and altitude layering.</p>
+        </div></div>
+        <div class="card"><div class="card-inner">
+          <div class="tag red">DAA</div>
+          <h3>Vision‑Based Detect & Avoid</h3>
+          <p>Training YOLOv9/v11 on AVOIDDS for intruder aircraft detection; analysis with precision‑recall, IoU, and confidence distributions.</p>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications" class="section">
+    <div class="container">
+      <h2>Selected Publications</h2>
+      <div class="card"><div class="card-inner">
+        <div class="pub-item">
+          <strong>Flight Data Recorders: Past, Present, and Future</strong> — <em>IEEE Aerospace & Electronic Systems Magazine</em>, early access, 2023/2024.
+          <div class="pub-meta">Raza, W. et al. | DOI pending | <a href="#">PDF</a> · <a href="#">BibTeX</a></div>
+        </div>
+        <div class="pub-item">
+          <strong>Noise Prediction & Mitigation for UAS and eVTOL Aircraft: A Survey</strong> — <em>In review</em>.
+          <div class="pub-meta">Survey of metrics, tools (AEDT, AIRNOISEUAM, Helios, PSU‑WOPWOP) and community acceptance.</div>
+        </div>
+        <div class="pub-item">
+          <strong>Advanced Air Mobility: Innovations, Applications, Challenges, and Future Potential</strong> — <em>AIAA Journal of Air Transportation</em> (accepted).</div>
+      </div></div>
+      <p class="pub-meta" style="margin-top:10px">Full list on <a href="#contact">Google Scholar</a> and <a href="#contact">ORCID</a>.</p>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="grid cols-3">
+        <div class="card"><div class="card-inner">
+          <div class="tag purple">Optimization</div>
+          <h3>Noise‑Optimized AAM Routing</h3>
+          <p>Horizontal & vertical optimization to reduce exposure around receptors; evaluates SEL/DNL improvements and equity impacts.</p>
+          <a class="btn secondary" href="#">Code / Paper</a>
+        </div></div>
+        <div class="card"><div class="card-inner">
+          <div class="tag orange">Tooling</div>
+          <h3>UAM Noise Tooling Benchmark</h3>
+          <p>Comparative study of AEDT, AIRNOISEUAM, Helios, PSU‑WOPWOP, and others; taxonomy and use‑case guidance.</p>
+          <a class="btn secondary" href="#">Repo</a>
+        </div></div>
+        <div class="card"><div class="card-inner">
+          <div class="tag blue">Computer Vision</div>
+          <h3>DAA with YOLOv9/YOLOv11</h3>
+          <p>Training and evaluation on AVOIDDS: intruder aircraft detection, confusion analysis, and PR curves for publication.</p>
+          <a class="btn secondary" href="#">Results</a>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="datasets" class="section">
+    <div class="container">
+      <h2>Datasets & Artifacts</h2>
+      <div class="grid cols-2">
+        <div class="card"><div class="card-inner">
+          <h3>School/Hospital Sensitive Areas (FL)</h3>
+          <p>Florida school coordinates and filtered addresses for noise‑aware routing experiments.</p>
+          <ul>
+            <li>Original: <code>FL-School.xlsx</code></li>
+            <li>Filtered: <code>filtered_FL_schools.xlsx</code></li>
+            <li>Coordinates: <code>FL_schools_with_coordinates.xlsx</code></li>
+          </ul>
+        </div></div>
+        <div class="card"><div class="card-inner">
+          <h3>AVOIDDS / Vision DAA</h3>
+          <p>72k labeled images across environments (Palo Alto, Boston, Oshkosh, Reno Tahoe) with metadata for lighting/weather/time‑of‑day.</p>
+          <a class="btn secondary" href="#">Dataset Notes</a>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="talks" class="section">
+    <div class="container">
+      <h2>Talks & Awards</h2>
+      <div class="grid cols-2">
+        <div class="card"><div class="card-inner">
+          <h3>Conferences</h3>
+          <ul>
+            <li>DASC 2025 — Presenter</li>
+            <li>ERAU School Week — Poster</li>
+          </ul>
+        </div></div>
+        <div class="card"><div class="card-inner">
+          <h3>Awards</h3>
+          <ul>
+            <li>Best Session Award (team contribution)</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cv" class="section">
+    <div class="container">
+      <h2>CV</h2>
+      <div class="card"><div class="card-inner">
+        <p>Download my latest CV: <a href="assets/Waleed_Raza_CV.pdf">Waleed_Raza_CV.pdf</a> (place your file in <code>assets/</code>).</p>
+        <p>Keywords: AAM/UAM, noise modeling, aeroacoustics, routing optimization, vertiport design, DAA, YOLO, PyTorch, MATLAB, AEDT, AIRNOISEUAM, Helios, PSU‑WOPWOP.</p>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="news" class="section">
+    <div class="container">
+      <h2>News</h2>
+      <div class="card"><div class="card-inner">
+        <div class="news-item"><div class="news-date">Oct 2025</div><div>Submitted manuscript on <em>UAM Noise Prediction Tools</em> with expanded taxonomy and 18 CONOPS.</div></div>
+        <div class="news-item"><div class="news-date">Aug 2025</div><div>Completed YOLOv9c training on AVOIDDS; mAP50 ≈ 0.892, F1 ≈ 0.879.</div></div>
+        <div class="news-item"><div class="news-date">Apr 2025</div><div>Poster accepted at ERAU School Week on dynamic airspace allocation.</div></div>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="twocol">
+        <div class="card"><div class="card-inner">
+          <h3>Get in touch</h3>
+          <p>Email: <a href="mailto:raza.waleed@outlook.com">raza.waleed@outlook.com</a></p>
+          <p>Affiliation: Embry‑Riddle Aeronautical University (Daytona Beach, FL)</p>
+        </div></div>
+        <div class="card"><div class="card-inner">
+          <h3>Profiles</h3>
+          <div class="social">
+            <a href="https://github.com/USERNAME" target="_blank" rel="noopener">GitHub</a>
+            · <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
+            · <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+            · <a href="https://orcid.org/" target="_blank" rel="noopener">ORCID</a>
+          </div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div>© <span id="year"></span> Waleed Raza. Built with plain HTML/CSS. Palette inspired by qualitative Set3.</div>
+        <div>
+          <a href="#home">Back to top</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const target=document.querySelector(a.getAttribute('href'));
+        if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}
+      })
+    })
+    // Active link highlight
+    const links=[...document.querySelectorAll('.navlinks a')];
+    const sections=links.map(l=>document.querySelector(l.getAttribute('href'))).filter(Boolean);
+    const observe=new IntersectionObserver(entries=>{
+      entries.forEach(en=>{
+        if(en.isIntersecting){
+          links.forEach(l=>l.classList.remove('active'));
+          const id = '#' + en.target.id;
+          const link = links.find(l=>l.getAttribute('href')===id);
+          if(link) link.classList.add('active');
+        }
+      })
+    },{rootMargin:'-40% 0px -55% 0px',threshold:0});
+    sections.forEach(s=>observe.observe(s));
+    // year
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -91,6 +91,13 @@ h1{font-size:36px;line-height:1.15;margin:14px 0 10px}
 .twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .avatar{width:100%;max-width:160px;border-radius:999px;display:block;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.12);margin:0 auto}
 
+/* Bigger visuals on the Materials page */
+.container.wide{ max-width: 1400px; }           /* wider than default 1100px */
+.grid.cols-1{ grid-template-columns: 1fr; }     /* single-column helper */
+
+figure.card img{ width:100%; height:auto; display:block; } /* ensure full width */
+
+
 @media (max-width: 900px){
   .hero .top{grid-template-columns:1fr}
   .grid.cols-3,.grid.cols-2,.twocol{grid-template-columns:1fr}

@@ -1,1 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Materials — NYC 311 Noise</title>
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="canonical" href="https://portfolio.waleedraza.dev/materials.html">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="index.html" aria-label="Home" title="Home — Waleed Raza">
+          <img src="assets/favicon.png" alt="" class="brandmark"> <span>Waleed Raza</span>
+        </a>
+        <div class="navlinks">
+          <a href="index.html">Home</a><a href="research.html">Research</a><a href="publications.html">Publications</a>
+          <a href="projects.html">Projects</a><a href="datasets.html">Datasets</a><a href="talks.html">Talks</a>
+          <a href="cv.html">CV</a><a class="active" href="materials.html">Materials</a><a href="contact.html">Contact</a>
+        </div>
+        <a class="btn" href="contact.html">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h1>NYC 311 Noise — Figures & Code</h1>
+      <p class="lead">Charts generated in R and Python from NYC 311 noise complaints. Static images below; source code available as downloads.</p>
+
+      <h2>Key Figures</h2>
+      <div class="grid cols-2">
+        <figure class="card"><div class="card-inner">
+          <img src="assets/plots/nyc_noise_by_year.png" alt="NYC noise complaints by year" style="width:100%;height:auto;display:block">
+          <figcaption class="pub-meta">Noise complaints by year.</figcaption>
+        </div></figure>
+
+        <figure class="card"><div class="card-inner">
+          <img src="assets/plots/nyc_noise_pct_by_year.png" alt="Share of noise complaints by year" style="width:100%;height:auto;display:block">
+          <figcaption class="pub-meta">Share (%) of total complaints by year.</figcaption>
+        </div></figure>
+
+        <figure class="card"><div class="card-inner">
+          <img src="assets/plots/nyc_noise_by_type.png" alt="Noise complaints by type" style="width:100%;height:auto;display:block">
+          <figcaption class="pub-meta">Noise complaints by type.</figcaption>
+        </div></figure>
+
+        <figure class="card"><div class="card-inner">
+          <img src="assets/plots/noise_levels_by_category.png" alt="Noise levels by category" style="width:100%;height:auto;display:block">
+          <figcaption class="pub-meta">Noise levels by category (Python).</figcaption>
+        </div></figure>
+      </div>
+
+      <h2 style="margin-top:22px">Heatmaps — 5 Boroughs</h2>
+      <div class="grid cols-3">
+        <figure class="card"><div class="card-inner">
+          <img src="assets/plots/heat_manhattan.png" alt="Manhattan noise heatmap" style="width:100%;height:auto;display:block">
+          <figcaption class="pub-meta">Manhattan</figcaption>
+        </div></figure>
+        <figure class="card"><div class="card-inner">
+          <img src="assets/plots/heat_brooklyn.png" alt="Brooklyn noise heatmap" style="width:100%;height:auto;display:block">
+          <figcaption class="pub-meta">Brooklyn</figcaption>
+        </div></figure>
+        <figure class="card"><div class="card-inner">
+          <img src="assets/plots/heat_bronx.png" alt="Bronx noise heatmap" style="width:100%;height:auto;display:block">
+          <figcaption class="pub-meta">Bronx</figcaption>
+        </div></figure>
+        <figure class="card"><div class="card-inner">
+          <img src="assets/plots/heat_queens.png" alt="Queens noise heatmap" style="width:100%;height:auto;display:block">
+          <figcaption class="pub-meta">Queens</figcaption>
+        </div></figure>
+        <figure class="card"><div class="card-inner">
+          <img src="assets/plots/heat_staten.png" alt="Staten Island noise heatmap" style="width:100%;height:auto;display:block">
+          <figcaption class="pub-meta">Staten Island</figcaption>
+        </div></figure>
+      </div>
+
+      <h2 style="margin-top:22px">Source Code</h2>
+      <div class="grid cols-2">
+        <div class="card"><div class="card-inner">
+          <h3 style="margin-top:0">R script</h3>
+          <p class="pub-meta">Data prep, yearly bars/percentages, type breakdown, and (optional) heatmap exports.</p>
+          <p><a class="btn secondary" href="assets/code/nyc_noise_311_plots.R" download>Download <code>nyc_noise_311_plots.R</code></a></p>
+        </div></div>
+        <div class="card"><div class="card-inner">
+          <h3 style="margin-top:0">Python script</h3>
+          <p class="pub-meta">Noise levels by category chart with percentages.</p>
+          <p><a class="btn secondary" href="assets/code/noise_levels_by_category.py" download>Download <code>noise_levels_by_category.py</code></a></p>
+        </div></div>
+      </div>
+
+      <p class="pub-meta" style="margin-top:12px">
+        Data: NYC 311 (filtered to “noise”). If any heatmaps were generated with Google basemaps via <code>ggmap</code>, please ensure proper attribution and terms. For web display, static images are provided.
+      </p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div>© <span id="year"></span> Waleed Raza</div>
+      <div><a href="index.html">Back to home</a></div>
+    </div>
+  </footer>
+  <script src="assets/site.js"></script>
+</body>
+</html>
 
